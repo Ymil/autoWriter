@@ -62,7 +62,7 @@ class AutoWriter:
                 if char == "[":
                     print("Function detecttion")
                     print(position)
-                    self._fileHandler.seek(position-1)
+                    self._fileHandler.seek(position)
                     line = self._fileHandler.readline()
                     r = self.checkSpecialFunction(line)                        
                     if(r):
@@ -76,13 +76,15 @@ class AutoWriter:
                         position += r[2]
                         self._fileHandler.seek(position)
                         continue
+                    else:
+                        print("No function")
                 if not char:
                     print("End file")
                     break
                 #print(char)
                 self._keywordHandler.press(char)
                 self._keywordHandler.release(char)
-                position += 1
+                position = self._fileHandler.tell()
                 self.setPosition(position)
                 sleep(timeBtChar)
                 
