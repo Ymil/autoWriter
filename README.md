@@ -19,6 +19,7 @@ pip install prompt-toolkit pynput
 Sirven para que el autowriter ejecute acciones a partir de lo que lee en el archivo
 ### Escribir más lento
 **[slow=0.4]**: autoWriter escribirá cada letra con una velocidad de 0.4
+
 **[endslow=0]**: Vuelve a la velocidad configurada por defecto
 ### Hacer una pausa
 **[sleep=10]**: AutoWriter hará una pausa de 10 segundos
